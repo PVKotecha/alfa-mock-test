@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="152" viewBox="0 0 152 152">
+  <defs>
+    <filter id="Rectangle_937" x="0" y="0" width="152" height="152" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="BROWSER" transform="translate(-977 -327)">
+    <g transform="matrix(1, 0, 0, 1, 977, 327)" filter="url(#Rectangle_937)">
+      <rect id="Rectangle_937-2" data-name="Rectangle 937" width="134" height="134" rx="10" transform="translate(9 9)" fill="#67b8fc"/>
+    </g>
+    <g id="browser-2" data-name="browser" transform="translate(1022 376)">
+      <g id="Group_777" data-name="Group 777">
+        <path id="Path_225" data-name="Path 225" d="M60.069,31H1.813A1.812,1.812,0,0,0,0,32.813V83.575a1.812,1.812,0,0,0,1.813,1.813H60.069a1.812,1.812,0,0,0,1.813-1.813V32.813A1.812,1.812,0,0,0,60.069,31ZM58.256,81.762H3.626V49.129h54.63Zm0-36.259H3.626V34.626h54.63ZM9.186,41.878h3.626a1.813,1.813,0,1,0,0-3.626H9.186a1.813,1.813,0,1,0,0,3.626Zm10.878,0h3.626a1.813,1.813,0,1,0,0-3.626H20.063a1.813,1.813,0,1,0,0,3.626Zm10.878,0h3.626a1.813,1.813,0,1,0,0-3.626H30.941a1.813,1.813,0,0,0,0,3.626ZM12.811,70.885h14.5a1.812,1.812,0,0,0,1.813-1.813v-14.5a1.812,1.812,0,0,0-1.813-1.813h-14.5A1.812,1.812,0,0,0,11,54.568v14.5A1.812,1.812,0,0,0,12.811,70.885Zm1.813-14.5H25.5V67.259H14.624Zm19.942,0h14.5a1.813,1.813,0,1,0,0-3.626h-14.5a1.813,1.813,0,1,0,0,3.626Zm0,7.252h14.5a1.813,1.813,0,1,0,0-3.626h-14.5a1.813,1.813,0,1,0,0,3.626Zm0,7.252h14.5a1.813,1.813,0,1,0,0-3.626h-14.5a1.813,1.813,0,1,0,0,3.626ZM12.811,78.137H49.07a1.813,1.813,0,1,0,0-3.626H12.811a1.813,1.813,0,1,0,0,3.626Z" transform="translate(0 -31)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!--LATO Google Fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/solid.min.css">
+
+    <!--LineIcons-->
+    <link rel="stylesheet" href="css/LineIcons.css">
+
+    <title>Alfa Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+    <style>
+.alfa-SRT-coockies, .alfa-SRT-javascript, .alfa-SRT-browser, .alfa-SRT-micStatus, .alfa-SRT-resolution, .alfa-SRT-micAndspecker {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 3.5px rgba(0,0,0,0.3);
+    margin-top: 64px;
+    position: relative;
+}
+.alfa-SRT-coockies img, .alfa-SRT-javascript img, .alfa-SRT-browser img, .alfa-SRT-micStatus img {
+    position: absolute;
+    left: 10px;
+    top: -54px;
+    max-width: 100px;
+}
+
+.alfa-SRT-resolution img, .alfa-SRT-micAndspecker img {
+    position: absolute;
+    top: -37px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 455px;
+    max-width: 455px;
+}  
+.alfa-SRT-coockies h2, .alfa-SRT-javascript h2, .alfa-SRT-browser h2, .alfa-SRT-micStatus h2, .alfa-SRT-resolution h2, .alfa-SRT-micAndspecker h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding-top: 60px;
+    text-transform: capitalize;
+}
+
+.alfa-SRT-coockies p, .alfa-SRT-javascript p, .alfa-SRT-browser p, .alfa-SRT-micStatus p, .alfa-SRT-resolution p, .alfa-SRT-micAndspecker p {
+    font-size: 14px;
+    color: #b3b3b3;
+    padding-bottom: 42px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    text-align: center;
+}
+.alfa-SRT-browser p {
+    padding-bottom: 20px;
+}
+.alfa-SRT-micAndspecker p {
+    padding-bottom: 14px;
+}
+.alfa-SRT-coockies h2 {
+    color: #ec935f;
+}
+.alfa-SRT-javascript h2 {
+    color: #e8342b;
+}
+.alfa-SRT-browser h2 {
+    color: #67b8fc;
+}
+.alfa-SRT-micStatus h2 {
+    color: #2fda61;
+}
+.alfa-SRT-resolution h2 {
+    color: #185d92;
+}
+.alfa-SRT-micAndspecker h2 {
+    color: #01dada;
+}
+.alfa-SRT-resolution h2, .alfa-SRT-micAndspecker h2 {
+    padding-top: 75px;
+}
+.alfa-SRT-browser h3, .alfa-SRT-resolution h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.alfa-SRT-coockies i, .alfa-SRT-javascript i, .alfa-SRT-browser i, .alfa-SRT-micStatus i, .alfa-SRT-resolution i, .alfa-SRT-micAndspecker i {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    padding: 4px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #2fda61;
+}
+.alfa-SRT-coockies i.fa-times, .alfa-SRT-javascript i.fa-times, .alfa-SRT-browser i.fa-times, .alfa-SRT-micStatus i.fa-times, .alfa-SRT-resolution i.fa-times, .alfa-SRT-micAndspecker i.fa-times {
+    padding: 4px 7px;
+    background-color: #e8342b;
+}
+        .alfa-system-req-test-wrapper h1 {
+            font-size: 30px;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #00cdcd;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 0 3.5px rgba(0,0,0,0.3);
+        }
+        .alfa-SRT-micAndspecker img.body {
+            position: relative; 
+            margin-top: 54px; 
+            max-width: 555px;
+        }
+        .alfa-SRT-card-footer {
+    max-width: 320px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+        .progress.alfa-progress {
+    border-radius: 50px;
+        }
+        .alfa-SRT-micAndspecker .progress.alfa-progress {
+    height: 30px;
+}
+.progress.alfa-progress .progress-bar {
+    border-radius: 50px;
+    animation: progress 1.5s ease-in-out forwards;
+    transition-duration: 3s;
+}
+.alfa-SRT-micAndspecker .progress.alfa-progress .progress-bar {
+    background-color: #00cdcd;
+}
+.alfa-show-word-btn {
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 50px;
+    max-height: 38px;
+    padding-top: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+}
+.alfa-SRT-card-footer .btn {
+    margin-top: 8px;
+    padding: 4px;
+}
+.alfa-bg-blue {
+    background-color: #00cdcd !important;
+}
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+.alfa-navbar .navbar-brand img {
+    width: 100px;
+}
+        .alfa-PT-header-wrapper {
+    margin-top: 80px;
+    background-color: #fff; 
+}
+.alfa-bg-blue {
+    background-color: #00cdcd !important;
+}
+.alfa-PT-header {
+    padding: 10px 0;
+}
+.alfa-PT-header-wrapper.dictionary .alfa-PT-header .alfa-PT-header-left i {
+    float: left;
+    font-size: 20px;
+    padding: 8px 25px 5px 5px;
+    color: #fff;
+}
+.alfa-mock-test-header-links {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+.progress.alfa-progress {
+    border-radius: 50px;
+    height: 10px;
+}
+.progress.alfa-progress.alfa-bg-blue-dark {
+    background-color: rgba(24, 93, 146, .2) !important;
+}
+.progress.alfa-progress.alfa-bg-blue-dark .progress-bar {
+    background-color: #185d92;
+}
+.progress.alfa-progress .progress-bar {
+    border-radius: 50px;
+    animation: progress 1.5s ease-in-out forwards;
+    transition-duration: 3s;
+}
+.alfa-speech-test-card i, .alfa-listen-test-card i {
+    color: #fff;
+    font-size: 30px;
+    border-radius: 50%;
+}
+p.alfa-test-card-bottom-content {
+    margin-top: 20px;
+    text-align: center;
+}
+.alfa-PT-E-recording-sec-count {
+    text-align: left;
+    margin-bottom: 0;
+    color: #c0c7c7;
+    font-weight: 600;
+    font-size: 14px;
+} 
+.alfa-PT-E-recording-sec-finish {
+    float: right;
+}
+.alfa-listen-test-card i { 
+    color: #000;
+    padding: 14px 19px;
+    animation: pulse_animation_blue 1.3s infinite;
+}  
+        .card {
+            border-radius: 10px;
+        }
+        .alfa-listen-test-card, .alfa-speech-test-card {
+            margin-top: 12px;
+            text-align: center;
+            display: block;
+            padding: 10px 13px 13px;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+        }
+        .alfa-body.mock-test .card {
+            margin-bottom: 16px;
+        }
+        .alfa-PT-Examination-card {
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.alfa-PT-Examination-card .card-header { 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+        .alfa-PT-header-wrapper.dictionary .alfa-PT-header .alfa-PT-header-left h1 {
+            color: #fff;
+            margin: 5px 0;
+        }
+
+        .alfa-PT-header-wrapper.dictionary .alfa-PT-header .alfa-PT-header-left i {
+            float: left;
+            font-size: 20px;
+            padding: 8px 25px 5px 5px;
+            color: #fff;
+        }
+
+        .alfa-mock-test-header-links {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            float: right;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .alfa-mock-test-header-links .contact {
+            color: #fff;
+            color: #fff;
+            vertical-align: middle;
+            line-height: 2.2;
+            margin-right: 25px;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        .alfa-mock-test-header-links .contact:hover {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .alfa-body.mock-test{
+            min-height: 100vh;
+        }
+        .alfa-body.mock-test h2 {
+            color: #123456;
+            font-size: 26px;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .alfa-body.mock-test .card {
+            margin-bottom: 16px;
+        }
+
+        .alfa-body.mock-test .card .card-header {
+            padding: 0;
+        }
+
+        .alfa-body.mock-test .card .card-header h3 {
+            font-size: 19px;
+            line-height: 34px;
+            padding: 0 0 0 8px;
+            margin-bottom: 0;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* .alfa-body.mock-test .card .card-body {
+            background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%), -webkit-linear-gradient(270deg, #eee 0, rgba(255, 255, 255, 0) 100%);
+        } */
+
+        .alfa-body.mock-test .card:hover .card-body {
+            background-image: none;
+        }
+
+        .mock-test-img {
+            max-height: 250px;
+            max-width: 100%;
+        }
+
+        .alfa-body.mock-test .card .card-body p {
+            color: #636363;
+            letter-spacing: 1px;
+        }
+
+        .alfa-body.mock-test .progress.alfa-progress {
+            height: 6px;
+        }
+
+        footer a {
+            color: #00cdcd;
+            transition: .3s;
+        }
+
+        footer a:hover {
+            color: #05aaaa;
+        }
+
+        footer i {
+            background-color: #fff;
+            padding: 8px 8px 8px 9px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        footer .copyright {
+            color: #fff;
+            float: right;
+        }
+        .mock-action-btn{
+            color: #fff;
+            transition: .3s;
+        } 
+        .mock-action-btn:hover{
+            background-color: rgb(17, 230, 230, .5);
+            color: #fff;
+        }
+        .card.recorder{
+            max-width: 450px;
+            border-radius: 0;
+            margin: 0 auto;
+        }
+        .alfa-body.mock-test .card.recorder .progress{
+            height: 4px;
+        }
+        .card.recorder .progress-bar{
+            background-color: #696969;
+        }
+        .card.recorder a{
+            color: #333333;
+        }
+        .card.recorder .card-body .text{
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .card.recorder .card-body .text .red{
+            color: red;
+        }
+        #waveform wave {
+            height: 48px !important;
+        }
+        @-webkit-keyframes progress {
+            from {
+            width: 0;
+            }
+            to {
+            width: 100%;
+            }
+        }
+        
+        @keyframes progress {
+            from {
+            width: 0;
+            }
+            to {
+            width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Nav-->
+        <!--Nav-->
+        <nav class="navbar alfa-navbar navbar-expand-lg shadow-sm bg-white fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/alfa.svg" alt="logo" loading="lazy">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <p class="lead mb-0 text-uppercase">The Conception of Excellence</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Nav End-->
+    
+        <!--Main Header-->
+        <div class="alfa-PT-header-wrapper dictionary alfa-bg-blue">
+            <div class="container">
+                <div class="row no-gutters alfa-PT-header">
+                    <div class="col-md-12">
+                        <div class="alfa-PT-header-left">
+                            <a href="#">
+                                <i class="fa fa-home"></i>
+                            </a>
+                            <div>
+                                <ul class="alfa-mock-test-header-links">
+                                    <li>
+                                        <a href="#" class="contact">Contact</a>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-info">Logout</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Main Header End-->
+    <!--Nav End-->
+    <!--Alfa body-->
+    <div class="alfa-body pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 px-lg-0">
+                    <div class="alfa-system-req-test-wrapper">
+                        <h1>System Requirement Test</h1>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="alfa-SRT-coockies">     
+                                    <img src="img/cookies.svg" alt="coockies">
+                                    <h2>Coockies</h2>
+                                    <p>Cookies is enabled</p>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="alfa-SRT-javascript">     
+                                    <img src="img/javascript.svg" alt="javascript">
+                                    <h2>Java Script</h2>
+                                    <p>Java Script is enabled</p>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="alfa-SRT-browser">     
+                                    <img src="img/browser.svg" alt="browser">
+                                    <h2>Best Browser For</h2>
+                                    <h3>Google Chrome</h3>
+                                    <p>You are using google chrome</p>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="alfa-SRT-micStatus">     
+                                    <img src="img/microphone.svg" alt="microphone">
+                                    <h2>Microphone status</h2>
+                                    <p>Microphone is disable</p>
+                                    <i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="col-sm-6">
+                                <div class="alfa-SRT-resolution">     
+                                    <img src="img/resolution.svg" alt="resolution">
+                                    <h2>best resolution</h2>
+                                    <h3>1366 * 768 and above</h3>
+                                    <p>your resolution is 1536*864</p>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="alfa-SRT-micAndspecker">     
+                                    <img src="img/microspeaker.svg" alt="Microphone and speaker">
+                                    <h2>test your Microphone and speaker</h2>
+                                    <p>time: 20 sec</p>
+                                    <div class="alfa-SRT-card-footer">
+                                        <div class="progress alfa-progress">
+                                            <div class="progress-bar" role="progressbar" style="max-width: 11%" aria-valuenow="11"
+                                              aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div> 
+                                        <button class="btn btn-primary btn-block alfa-show-word-btn alfa-bg-blue">Record</button>
+                                    </div>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alfa-SRT-micAndspecker">     
+                                    <img src="img/keyboard.svg" alt="keyboard">
+                                    
+                                    <h2 style="color: #680ab3">Check your Keyboard</h2>
+                                   
+                                    <div class="alfa-SRT-card-footer">
+                                       <img src="img/keyboard1.png" class="body" alt="keyboard">
+                                    </div>
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Alfa body End-->
+
+    <footer class="bg-dark py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="d-flex p-0  mb-0 list-unstyled">
+                        <li>
+                            <a href="#">
+                                <i class="lni lni-facebook-filled"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="lni lni-telegram-original"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="lni lni-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        <small class="mr-4">Copyright © 2020 AlfaPTE</small>
+                        <small class="mr-2"><a href="#">Policy</a></small>
+                        <small><a href="#">Terms</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.5.1.slim.min.js"></script> 
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/alfa-scripts.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="152" viewBox="0 0 152 152">
+  <defs>
+    <filter id="Rectangle_937" x="0" y="0" width="152" height="152" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="SPEAKER" transform="translate(-1391 -327)">
+    <g transform="matrix(1, 0, 0, 1, 1391, 327)" filter="url(#Rectangle_937)">
+      <rect id="Rectangle_937-2" data-name="Rectangle 937" width="134" height="134" rx="10" transform="translate(9 9)" fill="#2fda61"/>
+    </g>
+    <g id="Group_751" data-name="Group 751" transform="translate(1446 372)">
+      <path id="Path_10" data-name="Path 10" d="M773.933,201.462v10.747c0,5.953-7.193,10.984-15.7,10.984s-15.7-5.031-15.7-10.984V201.462H737.45v10.747c0,8.243,8.1,14.974,18.458,15.879v9.052H743.77v4.644h28.918V237.14H760.551v-9.052c10.355-.905,18.458-7.636,18.458-15.879V201.462Z" transform="translate(-737.45 -180.264)" fill="none" stroke="#fff" stroke-width="1.5"/>
+      <path id="Path_11" data-name="Path 11" d="M779.286,174.108V167.6a9.131,9.131,0,0,0-9.1-9.1H767.4a9.131,9.131,0,0,0-9.1,9.1v.642h6.952v2h-6.952v8.728h6.952v2h-6.952v6.774a9.131,9.131,0,0,0,9.1,9.1h2.782a9.132,9.132,0,0,0,9.1-9.1v-.908h-6.952v-2h6.952v-8.728h-6.952v-2Z" transform="translate(-748.011 -158.495)" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
