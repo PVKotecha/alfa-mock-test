@@ -35,11 +35,11 @@
     box-shadow: 0 0 3.5px rgba(0,0,0,0.3);
     margin-top: 64px;
     position: relative;
-    min-height: 160px;
-    max-height: 160px;
+    min-height: 180px;
+    max-height: 180px;
 }
 .alfa-SRT-micAndspecker{
-    min-height: 320px;
+    min-height: 350px;
     max-height: 320px;
     margin-bottom: 24px;
 }
@@ -136,9 +136,10 @@
             /* max-width: 555px; */
         }
         .alfa-SRT-card-footer {
-    max-width: 320px;
+            max-width: 320px;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding-bottom: 8px;
+    max-height: 210px;
 }
         .progress.alfa-progress {
     border-radius: 50px;
@@ -401,6 +402,31 @@ p.alfa-test-card-bottom-content {
         #waveform wave {
             height: 48px !important;
         }
+        .custom-control-label {
+            padding-left: 8px;
+        }
+        .custom-control-label::before {
+            height: 20px;
+            width: 20px;
+            border: 2px solid #ccc;
+        }
+        .custom-control-label::after {
+            right: 0;
+        }
+        .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+    background: none;
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    color: #11e5e5;
+    font-size: 20px;
+    left: -19px;
+    top: -3px;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    border: 2px solid #11e5e5;
+    background: none;
+}
         @-webkit-keyframes progress {
             from {
             width: 0;
@@ -432,8 +458,7 @@ p.alfa-test-card-bottom-content {
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>
-                </button>
-    
+                </button> 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
@@ -498,7 +523,7 @@ p.alfa-test-card-bottom-content {
                             <div class="col-lg-2 col-sm-6">
                                 <div class="alfa-SRT-browser">     
                                     <img src="img/browser.svg" alt="browser">
-                                    <h2>Best Browser For</h2>
+                                    <h2>Recommended Browser</h2>
                                     <h3>Google Chrome</h3>
                                     <p>You are using <br>google chrome</p>
                                     <i class="fa fa-check"></i>
@@ -535,7 +560,7 @@ p.alfa-test-card-bottom-content {
                                         </div> 
                                         <button class="btn btn-primary btn-block alfa-show-word-btn alfa-bg-blue">Record</button>
                                     </div>
-                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-check"></i> 
                                 </div>
                             </div>
                             <div class="col-lg-5">
@@ -547,13 +572,17 @@ p.alfa-test-card-bottom-content {
                                     <div class="alfa-SRT-card-footer">
                                        <img src="img/keyboard1.png" class="body" alt="keyboard">
                                     </div>
-                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-check"></i> 
                                 </div>
                             </div>
                         </div> 
                         <div class="row">
                             <div class="col-lg-12 text-center">
-                                <button class="btn btn-lg btn-info mb-5 mt-2">Save &amp; Continue</button>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="custom-control-input" id="nonpractice1">
+                                    <label class="custom-control-label" for="nonpractice1"> Yes, I can confirm that my microphone is functioning properly & I have the correct keyboard</label>
+                                </div><br>
+                                <button class="btn btn-lg btn-info mb-5 mt-3" disabled>Continue</button>
                             </div>
                         </div>
                     </div>
