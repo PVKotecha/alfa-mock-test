@@ -123,7 +123,7 @@
             height: 35px;
             vertical-align: middle;
             min-width: 150px;
-            border: 2px dashed #333;
+            border: 2px dashed #c3c3c3;
         }
         .ui-sortable,
         .ui-sortable li{
@@ -157,6 +157,69 @@
             line-height: 2.5;
             margin-bottom: 16px;
         }
+input[type=checkbox],
+input[type=radio] {
+    position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  height: 14px;
+  width: 14px;
+  background-color: #eee;
+}
+.radiomark{
+    position: absolute;
+    top: 7px;
+    left: 2px;
+  height: 14px;
+  width: 14px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+input[type=checkbox] ~ .checkmark, 
+input[type=radio] ~ .radiomark{
+    background-color: #fff;
+    border: 1px solid #a9a9a9;
+}
+input[type=checkbox]:checked ~ .checkmark, 
+input[type=radio]:checked ~ .radiomark {
+  background-color: #01cdce;
+  border-color: #01cdce;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+input[type=checkbox]:checked ~ .checkmark:after, 
+input[type=radio]:checked ~ .radiomark:after  {
+  display: block;
+}
+.checkmark:after {
+    left: 4px;
+    top: 0;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.radiomark:after {
+ 	top: 0;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
     </style>
 </head>
 
@@ -345,24 +408,28 @@
                             <p class="font-weight-bold">According to the text, in which of these organizations might one expect labour costs to
                                 exceed 50%?</p>
 
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck1" style="cursor: pointer;">a
                                     sportswear shopa sportswear shopa sportswear shopa sportswear shopa sportswear shopa
                                     sportswear shopa sportswear shopa sportswear shop</label>
                             </div>
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck2" style="cursor: pointer;">a computer
                                     store</label>
                             </div>
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck3" style="cursor: pointer;">a language
                                     school</label>
                             </div>
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck4" style="cursor: pointer;">a dental
                                     practice</label>
                             </div>
@@ -502,6 +569,7 @@
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios1"> 
                                     assignments being misplaced by university staff
                                 </label>
@@ -509,6 +577,7 @@
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios2">
                                     students copying others' work
                                 </label>
@@ -516,6 +585,7 @@
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios3">
                                     overcrowding in classrooms at peak times
                                 </label>
@@ -523,6 +593,7 @@
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios4">
                                     the poor quality of English expression in assignments
                                 </label>

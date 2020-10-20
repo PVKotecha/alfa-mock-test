@@ -161,6 +161,9 @@
             width: 40px;
             vertical-align: middle;
         } 
+        .form-check.active{
+            background-color: #dfffff;
+        }
 input[type=range]:focus {
   outline: none;
   -webkit-appearance: none; 
@@ -245,6 +248,69 @@ input[type=range]:focus::-ms-fill-upper {
     border: 1px solid rgb(0, 176, 207);
     background-color: rgba(0, 176, 207,.1);
     padding-bottom: 4px;
+}
+input[type=checkbox],
+input[type=radio] {
+    position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  height: 14px;
+  width: 14px;
+  background-color: #eee;
+}
+.radiomark{
+    position: absolute;
+    top: 7px;
+    left: 2px;
+  height: 14px;
+  width: 14px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+input[type=checkbox] ~ .checkmark, 
+input[type=radio] ~ .radiomark{
+    background-color: #fff;
+    border: 1px solid #a9a9a9;
+}
+input[type=checkbox]:checked ~ .checkmark, 
+input[type=radio]:checked ~ .radiomark {
+  background-color: #01cdce;
+  border-color: #01cdce;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+input[type=checkbox]:checked ~ .checkmark:after, 
+input[type=radio]:checked ~ .radiomark:after  {
+  display: block;
+}
+.checkmark:after {
+    left: 4px;
+    top: 0;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.radiomark:after {
+ 	top: 0;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
 }
     </style>
 </head>
@@ -333,7 +399,7 @@ input[type=range]:focus::-ms-fill-upper {
                 <div class="card-body px-2 px-lg-3">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p class="font-italic"><b>You will hear a short lecture. Write a summary for a fellow student who was not present at the lecture. You should write 50-70 words.
+                            <p class="font-italic mb-0"><b>You will hear a short lecture. Write a summary for a fellow student who was not present at the lecture. You should write 50-70 words.
                                 </b>
                             </p>
                             <p class="font-italic">
@@ -343,7 +409,7 @@ input[type=range]:focus::-ms-fill-upper {
                             </p> 
                         </div> 
                     </div>
-                    <div class="card recorder m-0 mb-4" data-section="introduce"> 
+                    <div class="card recorder mb-4" data-section="introduce"> 
                         <div class="card-body">
                             <p class="text">
                                 Audio Player
@@ -357,15 +423,15 @@ input[type=range]:focus::-ms-fill-upper {
                                     <a class="micBtn" href="javascript:void(0)" class="mr-3"><i class="fa fa-play"></i></a>  
                                     <span class="alfa-PT-E-recording-sec-count ml-3" ><span id="elapsed_time_0" class="mr-2">00:00</span>/<span class="ml-2"id="total_time_0" >00:25</span></span>
                                 </div>
-                                <div class="col-6 align-self-center"> 
-                                    <div class="progress alfa-progress" style="width: 200px;">
+                                <div class="col-8 align-self-center"> 
+                                    <div class="progress alfa-progress" >
                                         <div class="progress-bar" role="progressbar" style="max-width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="rprogressbar_0"></div>
                                     </div>
                                 </div>
-                                <div class="col-2 align-self-center"> 
+                                <!-- <div class="col-2 align-self-center"> 
                                     <i class="fa fa-volume-up mr-2"></i> 
                                     <input type="range" class="custom-range mock-test-range" id="customRange1">
-                                </div>
+                                </div> -->
                             </div>
                         </div> 
                     </div>
@@ -416,7 +482,7 @@ input[type=range]:focus::-ms-fill-upper {
                     </div> 
                     <div class="row mt-3">
                         <div class="col-lg-12">
-                            <div class="card recorder  m-0 mb-4" data-section="introduce"> 
+                            <div class="card recorder mb-4" data-section="introduce"> 
                                 <div class="card-body">
                                     <p class="text">
                                         Audio Player
@@ -430,35 +496,39 @@ input[type=range]:focus::-ms-fill-upper {
                                             <a class="micBtn" href="javascript:void(0)" class="mr-3"><i class="fa fa-play"></i></a>  
                                             <span class="alfa-PT-E-recording-sec-count ml-3" ><span id="elapsed_time_0" class="mr-2">00:00</span>/<span class="ml-2"id="total_time_0" >00:25</span></span>
                                         </div>
-                                        <div class="col-6 align-self-center"> 
-                                            <div class="progress alfa-progress" style="width: 200px;">
+                                        <div class="col-8 align-self-center"> 
+                                            <div class="progress alfa-progress">
                                                 <div class="progress-bar" role="progressbar" style="max-width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="rprogressbar_0"></div>
                                             </div>
                                         </div>
-                                        <div class="col-2 align-self-center"> 
+                                        <!-- <div class="col-2 align-self-center"> 
                                             <i class="fa fa-volume-up mr-2"></i> 
                                             <input type="range" class="custom-range mock-test-range" id="customRange1">
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div> 
                             </div> 
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck1" style="cursor: pointer;">
                                     Its population was declining.</label>
                             </div>
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck2" style="cursor: pointer;">
                                     There was great uncertainty about the future of the city-state.</label>
                             </div>
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck3" style="cursor: pointer;">
                                     Its leaders were self-indulgent.</label>
                             </div>
-                            <div class="form-group form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                <span class="checkmark"></span>
                                 <label class="form-check-label" for="exampleCheck4" style="cursor: pointer;">
                                     The city-state was ruled by strong families.</label>
                             </div>
@@ -485,7 +555,7 @@ input[type=range]:focus::-ms-fill-upper {
                             </p>
                         </div>
                     </div>
-                    <div class="card recorder  m-0 mb-3 mt-2" data-section="introduce"> 
+                    <div class="card recorder mb-3 mt-2" data-section="introduce"> 
                         <div class="card-body">
                             <p class="text">
                                 Audio Player
@@ -499,15 +569,15 @@ input[type=range]:focus::-ms-fill-upper {
                                     <a class="micBtn" href="javascript:void(0)" class="mr-3"><i class="fa fa-play"></i></a>  
                                     <span class="alfa-PT-E-recording-sec-count ml-3" ><span id="elapsed_time_0" class="mr-2">00:00</span>/<span class="ml-2"id="total_time_0" >00:25</span></span>
                                 </div>
-                                <div class="col-6 align-self-center"> 
-                                    <div class="progress alfa-progress" style="width: 200px;">
+                                <div class="col-8 align-self-center"> 
+                                    <div class="progress alfa-progress">
                                         <div class="progress-bar" role="progressbar" style="max-width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="rprogressbar_0"></div>
                                     </div>
                                 </div>
-                                <div class="col-2 align-self-center"> 
+                                <!-- <div class="col-2 align-self-center"> 
                                     <i class="fa fa-volume-up mr-2"></i> 
                                     <input type="range" class="custom-range mock-test-range" id="customRange1">
-                                </div>
+                                </div> -->
                             </div>
                         </div> 
                     </div>
@@ -541,7 +611,7 @@ input[type=range]:focus::-ms-fill-upper {
                         </div>
                     </div>
                     
-                    <div class="card recorder  m-0 mb-3 mt-2" data-section="introduce"> 
+                    <div class="card recorder mb-3 mt-2" data-section="introduce"> 
                         <div class="card-body">
                             <p class="text">
                                 Audio Player
@@ -555,44 +625,48 @@ input[type=range]:focus::-ms-fill-upper {
                                     <a class="micBtn" href="javascript:void(0)" class="mr-3"><i class="fa fa-play"></i></a>  
                                     <span class="alfa-PT-E-recording-sec-count ml-3" ><span id="elapsed_time_0" class="mr-2">00:00</span>/<span class="ml-2"id="total_time_0" >00:25</span></span>
                                 </div>
-                                <div class="col-6 align-self-center"> 
-                                    <div class="progress alfa-progress" style="width: 200px;">
+                                <div class="col-8 align-self-center"> 
+                                    <div class="progress alfa-progress">
                                         <div class="progress-bar" role="progressbar" style="max-width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="rprogressbar_0"></div>
                                     </div>
                                 </div>
-                                <div class="col-2 align-self-center"> 
+                                <!-- <div class="col-2 align-self-center"> 
                                     <i class="fa fa-volume-up mr-2"></i> 
                                     <input type="range" class="custom-range mock-test-range" id="customRange1">
-                                </div>
+                                </div> -->
                             </div>
                         </div> 
                     </div>
                     <div class="row mt-3 mb-3"> 
                         <div class="col-lg-12"> 
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios1"> 
                                     assignments being misplaced by university staff
                                 </label>
                             </div>
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios2">
                                     students copying others' work
                                 </label>
                             </div>
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios3">
                                     overcrowding in classrooms at peak times
                                 </label>
                             </div>
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios4">
                                     the poor quality of English expression in assignments
                                 </label>
@@ -617,39 +691,69 @@ input[type=range]:focus::-ms-fill-upper {
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <video autoplay  width="500">
+                            <div class="card recorder mb-3 mt-2" data-section="introduce"> 
+                                <div class="card-body">
+                                    <p class="text">
+                                        Audio Player
+                                        <span class="float-right red" id="rcurrent_status_0">Audio starts in <span>25</span> Sec</span>
+                                        <!-- <span id="rbeginning_time_0" style="display: none;" >0</span> --> 
+                                    </p> 
+                                </div>
+                                <div class="card-footer px-2"> 
+                                    <div class="row no-gutters">
+                                        <div class="col-4" style="opacity:0.7;pointer-events:none;">
+                                            <a class="micBtn" href="javascript:void(0)" class="mr-3"><i class="fa fa-play"></i></a>  
+                                            <span class="alfa-PT-E-recording-sec-count ml-3" ><span id="elapsed_time_0" class="mr-2">00:00</span>/<span class="ml-2"id="total_time_0" >00:25</span></span>
+                                        </div>
+                                        <div class="col-8 align-self-center"> 
+                                            <div class="progress alfa-progress">
+                                                <div class="progress-bar" role="progressbar" style="max-width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="rprogressbar_0"></div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-2 align-self-center"> 
+                                            <i class="fa fa-volume-up mr-2"></i> 
+                                            <input type="range" class="custom-range mock-test-range" id="customRange1">
+                                        </div> -->
+                                    </div>
+                                </div> 
+                            </div>
+                            <!-- <video autoplay  width="500">
                                 <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4">
-                                <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
+                                <source src="mov_bbb.ogg" type="video/ogg">
                                 Your browser does not support HTML video.
-                              </video>
+                              </video> -->
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-lg-12">
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1_1"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios1_1"> 
                                     assignments being misplaced by university staff
                                 </label>
                             </div>
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2_1"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios2_1">
                                     students copying others' work
                                 </label>
                             </div>
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3_1"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios3_1">
                                     overcrowding in classrooms at peak times
                                 </label>
                             </div>
-                            <div class="form-check mb-2">
+                            <div class="form-check form-group mb-2 pb-1 pl-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4_1"
                                     value="option1" checked>
+                                    <span class="radiomark"></span>
                                 <label class="form-check-label" for="exampleRadios4_1">
                                     the poor quality of English expression in assignments
                                 </label>
@@ -677,7 +781,7 @@ input[type=range]:focus::-ms-fill-upper {
                             </p>
                         </div>
                     </div>
-                    <div class="card recorder  m-0 mb-3 mt-2" data-section="introduce"> 
+                    <div class="card recorder  mb-3 mt-2" data-section="introduce"> 
                         <div class="card-body">
                             <p class="text">
                                 Audio Player
@@ -691,15 +795,15 @@ input[type=range]:focus::-ms-fill-upper {
                                     <a class="micBtn" href="javascript:void(0)" class="mr-3"><i class="fa fa-play"></i></a>  
                                     <span class="alfa-PT-E-recording-sec-count ml-3" ><span id="elapsed_time_0" class="mr-2">00:00</span>/<span class="ml-2"id="total_time_0" >00:25</span></span>
                                 </div>
-                                <div class="col-6 align-self-center"> 
-                                    <div class="progress alfa-progress" style="width: 200px;">
+                                <div class="col-8 align-self-center"> 
+                                    <div class="progress alfa-progress">
                                         <div class="progress-bar" role="progressbar" style="max-width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="rprogressbar_0"></div>
                                     </div>
                                 </div>
-                                <div class="col-2 align-self-center"> 
+                                <!-- <div class="col-2 align-self-center"> 
                                     <i class="fa fa-volume-up mr-2"></i> 
                                     <input type="range" class="custom-range mock-test-range" id="customRange1">
-                                </div>
+                                </div> -->
                             </div>
                         </div> 
                     </div>
@@ -732,7 +836,7 @@ input[type=range]:focus::-ms-fill-upper {
                             </p>
                         </div>
                     </div>
-                    <div class="card recorder  m-0 mb-3 mt-2" data-section="introduce"> 
+                    <div class="card recorder  mb-3 mt-2" data-section="introduce"> 
                         <div class="card-body">
                             <p class="text">
                                 Audio Player
@@ -746,21 +850,41 @@ input[type=range]:focus::-ms-fill-upper {
                                     <a class="micBtn" href="javascript:void(0)" class="mr-3"><i class="fa fa-play"></i></a>  
                                     <span class="alfa-PT-E-recording-sec-count ml-3" ><span id="elapsed_time_0" class="mr-2">00:00</span>/<span class="ml-2"id="total_time_0" >00:25</span></span>
                                 </div>
-                                <div class="col-6 align-self-center"> 
-                                    <div class="progress alfa-progress" style="width: 200px;">
+                                <div class="col-8 align-self-center"> 
+                                    <div class="progress alfa-progress">
                                         <div class="progress-bar" role="progressbar" style="max-width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="rprogressbar_0"></div>
                                     </div>
                                 </div>
-                                <div class="col-2 align-self-center"> 
+                                <!-- <div class="col-2 align-self-center"> 
                                     <i class="fa fa-volume-up mr-2"></i> 
                                     <input type="range" class="custom-range mock-test-range" id="customRange1">
-                                </div>
+                                </div> -->
                             </div>
                         </div> 
                     </div>
                     <div class="row my-4">
                         <div class="col-lg-12">
-                             <input type="text" placeholder="Type here..." class="w-100">
+                            <div class="card alfa-PT-Examination-card alfa-writing">
+                                <div class="card-header alfa-bg-blue">
+                                    <h3 class="p-1"> 
+                                        <!-- <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-sm mr-3 mock-action-btn">Cut</button>
+                                            <button type="button" class="btn btn-sm mr-3 mock-action-btn">Copy</button>
+                                            <button type="button" class="btn btn-sm mock-action-btn">Paste</button>
+                                          </div>
+                                          <span class="float-right alfa-mock-test-header-links mr-3">
+                                            0 / 75 Word Limit
+                                          </span> -->
+                                    </h3>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                             <textarea class="form-control" placeholder="Write here" rows="2"></textarea>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
                         </div> 
                     </div>
                     <div class="row">
@@ -951,6 +1075,9 @@ input[type=range]:focus::-ms-fill-upper {
             $('#sixth').addClass('d-none');
             $('#seventh').removeClass('d-none');
         }
+        $('.form-check-label').on('click', function(){
+            $('.form-check').toggleClass('active')
+        })
     </script>
 </body>
 
