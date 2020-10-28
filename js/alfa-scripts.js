@@ -16,10 +16,10 @@ $(document).ready(function() {
         maxValue: 100,
         width: 9,
         text: function(value) {
-            return value + '% <small> <br> Completed</small>';
+            return value;
         },
         colors: ['rgba(47, 218, 97, .2)', '#2fda61'],
-        duration: 5400,
+        duration: 400,
         wrpClass: 'circles-wrp',
         textClass: 'circles-text',
         valueStrokeClass: 'circles-valueStroke',
@@ -35,7 +35,7 @@ $(document).ready(function() {
         maxValue: 100,
         width: 9,
         text: function(value) {
-            return value + '% <small> <br> Completed</small>';
+            return value;
         },
         colors: ['rgba(103, 184, 252, .2)', '#67b8fc'],
         duration: 400,
@@ -54,7 +54,7 @@ $(document).ready(function() {
         maxValue: 100,
         width: 9,
         text: function(value) {
-            return value + '% <small> <br> Completed</small>';
+            return value;
         },
         colors: ['rgba(24, 93, 146, .2)', '#185d92'],
         duration: 400,
@@ -73,7 +73,7 @@ $(document).ready(function() {
         maxValue: 100,
         width: 9,
         text: function(value) {
-            return value + '% <small> <br> Completed</small>';
+            return value;
         },
         colors: ['rgba(236, 147, 95, .2)', '#ec935f'],
         duration: 400,

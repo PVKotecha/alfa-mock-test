@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!--Datepicker-->
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+
+    <!--Exam Countdown css FlipClock-->
+    <link rel="stylesheet" href="css/flipclock.css">
+
+    <!--ALFA MOCK TEST CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--LATO Google Fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/solid.min.css">
+
+    <!--LineIcons-->
+    <link rel="stylesheet" href="css/LineIcons.css">
+
+    <title>Alfa Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+
+    <style>
+        .alfa-PT-header-wrapper.dictionary .alfa-PT-header .alfa-PT-header-left h1 {
+            color: #fff;
+            margin: 5px 0;
+        }
+
+        .alfa-PT-header-wrapper.dictionary .alfa-PT-header .alfa-PT-header-left i {
+            float: left;
+            font-size: 20px;
+            padding: 8px 25px 5px 5px;
+            color: #fff;
+        }
+
+        .alfa-mock-test-header-links {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            float: right;
+        }
+
+        .alfa-mock-test-header-links .contact {
+            color: #fff;
+            color: #fff;
+            vertical-align: middle;
+            line-height: 2.2;
+            margin-right: 25px;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        .alfa-mock-test-header-links .contact:hover {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .alfa-body.mock-test h2 {
+            color: #123456;
+            font-size: 26px;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .alfa-body.mock-test .card {
+            margin-bottom: 16px;
+        }
+
+        .alfa-body.mock-test .card .card-header {
+            padding: 0;
+        }
+
+        .alfa-body.mock-test .card .card-header h3 {
+            font-size: 19px;
+            line-height: 34px;
+            padding: 0 0 0 8px;
+            margin-bottom: 0;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* .alfa-body.mock-test .card .card-body {
+            background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%), -webkit-linear-gradient(270deg, #eee 0, rgba(255, 255, 255, 0) 100%);
+        } */
+
+        .alfa-body.mock-test .card:hover .card-body {
+            background-image: none;
+        }
+
+        .alfa-body.mock-test .card .card-body p {
+            color: #636363;
+            letter-spacing: 1px;
+        }
+
+        footer a {
+            color: #00cdcd;
+            transition: .3s;
+        }
+
+        footer a:hover {
+            color: #05aaaa;
+        }
+
+        footer i {
+            background-color: #fff;
+            padding: 8px 8px 8px 9px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        footer .copyright {
+            color: #fff;
+            float: right;
+        }
+        .alfa-bg-blue-dark{
+            background-color: #175d91;
+        }
+        .header-logo{
+            max-width: 50px; 
+            margin-right: 8px;
+        } 
+        .card.target-score {
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            max-width: 130px;
+            margin-left: auto; 
+        }
+        .card.target-score .card-header {
+            background-color: #00cdcd;
+            color: #fff;
+            text-align: center;
+        }
+        .card.target-score .card-body {
+            padding: 10px 0;
+        }
+        .card.target-score .card-body h2 {
+            font-size: 64px;
+            font-family: 'Lato', sans-serif;
+            color: #00cdcd;
+            margin: 0 0 8px 0;
+        }
+        .sub-heading{
+            color: #175d91;
+            border-bottom: 2px solid #b4b4b4;
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 8px;
+        }
+        .green-title,
+        .orange-title,
+        .blue-title,
+        .lightBlue-title{
+            margin-top: 16px;
+            font-weight: 600;
+        }
+        .green-title{
+            color: #2fda61 !important;
+        }
+        .orange-title{
+            color: #ec935f !important;
+        }
+        .lightBlue-title{
+            color: #67b8fc !important; 
+        }
+        .blue-title{
+            color: #185d92 !important; 
+        }
+        .progress{
+            background: none;
+            border-radius: 0; 
+        }
+        .progress-bar{
+            background-color: #00cece;
+        }
+        .progress.reading .progress-bar{
+            background-color: #2fda61;
+        }
+        .progress.listening .progress-bar{
+            background-color: #185d92;
+        }
+        .progress.writing .progress-bar{
+            background-color: #67b8fc;
+        }
+        .progress.speaking .progress-bar{
+            background-color: #ec935f;
+        }
+        .progress-wrapper{
+            position: relative;
+        }
+        .overall-line{
+            position: absolute;    
+            top: 34px;
+        }
+        .overall-line p{
+            margin-bottom: 0;
+            font-weight: 600;
+            color: #00cece !important;
+            position: relative;
+        }
+        .overall-line p::after{
+            content: "";
+            position: absolute;
+            height: 500px;
+            width: 6px;
+            background-color: #8e8e8e;
+            z-index: 22;
+            top: 24px;
+            left: 50%
+        }
+        .mock-report-tabs .title-icon{
+            max-width: 50px;
+        }
+        .mock-report-tabs .nav-link{
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 0;
+        }
+        .mock-report-tabs .nav-link.active, 
+        .mock-report-tabs .nav-link:hover{
+            border: 0;
+        }
+        .mock-report-tabs .nav-link.speaking{
+            color: #ec935f;
+        }
+        .mock-report-tabs .nav-link.speaking.active{
+            border-bottom: 2px solid #ec935f;
+        }
+        .mock-report-tabs .nav-link.reading{
+            color: #2fda61;
+        }
+        .mock-report-tabs .nav-link.reading.active{
+            border-bottom: 2px solid #2fda61;
+        }
+        .mock-report-tabs .nav-link.writing{
+            color: #67b8fc;
+        }
+        .mock-report-tabs .nav-link.writing.active{
+            border-bottom: 2px solid #67b8fc;
+        }
+        .mock-report-tabs .nav-link.listening{
+            color: #185d92;
+        }
+        .mock-report-tabs .nav-link.listening.active{
+            border-bottom: 2px solid #185d92;
+        }
+        .alfa-sidebar-main-card {
+            padding: 6px 0;
+            margin-bottom: 8px;
+            overflow: hidden;
+            /* cursor: pointer; */
+        }
+        .alfa-sidebar-main-card h2 {
+            font-size: 18px !important;
+            font-family: 'Lato', sans-serif;
+            margin: 0 !important;
+        }
+        .alfa-sidebar-main-card h2 .alfa-id {
+            color: #11e6e6;
+            position: relative;
+            padding-left: 12px;
+            vertical-align: middle;
+        }
+        .alfa-sidebar-main-card h2 .alfa-id::after {
+            content: "";
+            position: absolute;
+            width: 110px;
+            height: 4px;
+            background-color: #11e6e6;
+            bottom: 0;
+            left: 0;
+            bottom: -13px;
+            left: 2px;
+            border-bottom-left-radius: 10px;
+        }
+        .alfa-sidebar-main-card h2 .alfa-content {
+            padding-left: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 30ch;
+            display: inline-block;
+            vertical-align: middle;
+            min-width: 177px;
+        }
+        .alfa-sidebar-main-card .alfa-PT-E-RS-labels {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .alfa-sidebar-main-card .alfa-PT-E-RS-labels .badge {
+            font-size: 12px;
+        }
+        .alfa-sidebar-main-card .alfa-PT-E-RS-labels .badge.badge-info {
+            background-color: #11e6e6;
+        }
+        .alfa-letter-btn {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            border-radius: 50px;
+            border: 1px solid #11e6e6;
+            color: #11e6e6;
+            padding-left: 4px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .alfa-letter-btn:hover{
+            color: #11e6e6;
+        }
+        .alfa-letter-btn span {
+            border-radius: 50px;
+            background-color: #11e6e6;
+            color: #fff;
+            padding: 5px 10px;
+        }
+        .alfa-letter-btn span {
+            padding: 3px 8px;
+        }
+        .alfa-ai-btn {
+            padding-left: 1px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border: 1px solid #ec935f;
+            background-color: #ec935f;
+            color: #fff; 
+            font-weight: 600;
+            position: relative;
+            border-radius: 50px;
+        }
+        .alfa-ai-btn:hover{
+            color: #fff;
+        }
+        .alfa-ai-btn img {
+            max-width: 70px;
+            width: 28px;
+            padding: 0;
+        }
+        .alfa-sidebar-freq-span{
+            color: #000;
+        }
+        .alfa-sidebar-freq-span:hover{
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Nav-->
+    <nav class="navbar alfa-navbar navbar-expand-lg shadow-sm bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/alfa.svg" alt="logo" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <p class="mb-0 text-uppercase" style="color: #123456; font-size: 26px;">Mock tests</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Nav End-->
+
+    <!--Main Header-->
+    <div class="alfa-PT-header-wrapper dictionary alfa-bg-blue">
+        <div class="container">
+            <div class="row no-gutters alfa-PT-header">
+                <div class="col-md-12">
+                    <div class="alfa-PT-header-left">
+                        <a href="#">
+                            <i class="fa fa-home"></i>
+                        </a>
+                        <div>
+                            <ul class="alfa-mock-test-header-links">
+                                <li>
+                                    <a href="#" class="contact">View Scores</a>
+                                </li>
+                                <li>
+                                    <button class="btn btn-info">Logout</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Main Header End-->
+    <!--Alfa body-->
+    <div class="alfa-body mock-test pt-0 mt-4">
+        <div class="container">
+            <!-- <h2 class="text-uppercase">Mock Tests</h2> --> 
+            <div class="card alfa-PT-Examination-card alfa-writing">
+                <div class="card-header alfa-bg-blue-dark p-2">
+                    <h3> 
+                        <img src="img/logo_rounded.png" class="img-fluid header-logo"> 
+                        <!-- <b class="mr-3 ml-3">A </b> -->
+                        Alfa PTE | Mock Test | Score Report
+                    </h3>
+                </div>
+                <div class="card-body px-lg-4">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-3 pr-lg-0 align-self-center">
+                                    <img src="img/user.png"  class="img-fluid w-75">
+                                </div>
+                                <div class="col-lg-7 pl-lg-0">
+                                    <p class="mt-2 mb-1"><b>John Doe</b></p>
+                                    <p class="mb-1">Moct Test: Reading</p>
+                                    <p class="mb-1">Test Date: 23/10/1995</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 align-self-center">
+                            <div class="card target-score">
+                                <div class="card-header">Overall Score</div>
+                                <div class="card-body">
+                                    <h2 class="text-center">
+                                        79
+                                    </h2>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <h3 class="sub-heading">Communication Skills</h3>
+                        </div>
+                    </div>
+                    <div class="row mb-4 mt-4">
+                        <div class="col-lg-2 offset-lg-2 text-center">
+                            <div class="circle" id="circles-reading-que"></div>
+                            <p class="green-title">Reading</p>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="circle" id="circles-writing-que"></div>
+                            <p class="lightBlue-title">Writing</p>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="circle" id="circles-listening-que"></div>
+                            <p class="blue-title">Listening</p>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="circle" id="circles-speaking-que"></div>
+                            <p class="orange-title">Speaking</p>
+                        </div>
+                    </div>
+                    <div class="progress-wrapper">
+                        <div class="overall-line" style="right: 180px;">
+                            <p>33 Overall</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <h3 class="sub-heading mb-3">Skills Breakdown</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Listening</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress listening" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Reading</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress reading" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Speaking</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress speaking" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-5 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Writing</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress writing" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 42%;" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <h3 class="sub-heading">Enabling Skills</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Grammar</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Oral Fluency</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Pronunciation</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Spelling</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Vocabulary</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-3 no-gutters">
+                            <div class="col-lg-2 align-self-center">
+                                <p class="pl-4 mb-0">Written Discource</p>
+                            </div>
+                            <div class="col-lg-10 align-self-center"> 
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-lg-12 text-center">
+                                <button class="btn btn-outline-info">Download Report</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="card mock-report-tabs">
+                <div class="card-header bg-white">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link speaking active" id="speaking-tab" data-toggle="tab" href="#speaking" role="tab" aria-controls="speaking" aria-selected="true">
+                            <img src="img/speaking.svg" class="mr-3 title-icon" alt="speaking">
+                            Speaking
+                        </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link writing" id="writing-tab" data-toggle="tab" href="#writing" role="tab" aria-controls="writing" aria-selected="false">
+                            <img src="img/writing.svg" class="mr-3 title-icon" alt="writing">
+                            writing
+                        </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link reading" id="reading-tab" data-toggle="tab" href="#reading" role="tab" aria-controls="reading" aria-selected="false">
+                            <img src="img/reading.svg" class="mr-3 title-icon" alt="reading">  
+                            reading
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link listening" id="listening-tab" data-toggle="tab" href="#listening" role="tab" aria-controls="listening" aria-selected="false">
+                            <img src="img/listening.svg" class="mr-3 title-icon" alt="listening">
+                            listening
+                            </a>
+                        </li>
+                      </ul>
+                </div>
+                <div class="card-body">  
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="speaking" role="tabpanel" aria-labelledby="speaking-tab">
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="writing" role="tabpanel" aria-labelledby="writing-tab">
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="reading" role="tabpanel" aria-labelledby="reading-tab">
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="listening" role="tabpanel" aria-labelledby="listening-tab">
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <p>
+                <i><b><span class="text-danger">Note: </span>Detailed analysis will expires in 6 months.</b></i>
+            </p>
+        </div>
+    </div>
+    <!--Alfa body End-->
+
+    <footer class="bg-dark py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="d-flex p-0  mb-0 list-unstyled">
+                        <li>
+                            <a href="#">
+                                <i class="lni lni-facebook-filled"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="lni lni-telegram-original"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="lni lni-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        <small class="mr-4">Copyright © 2020 AlfaPTE</small>
+                        <small class="mr-2"><a href="#">Policy</a></small>
+                        <small><a href="#">Terms</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/circles.min.js"></script>
+    <script src="js/flipclock.min.js"></script>
+    <script src="js/wavesurfer.min.js"></script>
+    <script src="js/jquery.simplePagination.js"></script>
+    <script src="js/alfa-scripts.js"></script>
+
+</body>
+
+</html>
