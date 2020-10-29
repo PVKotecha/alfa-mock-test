@@ -83,6 +83,7 @@
 
         .alfa-body.mock-test .card {
             margin-bottom: 16px;
+            z-index: 0;
         }
 
         .alfa-body.mock-test .card .card-header {
@@ -205,6 +206,7 @@
         }
         .progress-wrapper{
             position: relative;
+            padding-right: 50px;
         }
         .overall-line{
             position: absolute;    
@@ -279,7 +281,7 @@
             padding-left: 12px;
             vertical-align: middle;
         }
-        .alfa-sidebar-main-card h2 .alfa-id::after {
+        /* .alfa-sidebar-main-card h2 .alfa-id::after {
             content: "";
             position: absolute;
             width: 110px;
@@ -290,6 +292,10 @@
             bottom: -13px;
             left: 2px;
             border-bottom-left-radius: 10px;
+        } */
+        .alfa-sidebar-main-card .practice-icon{
+            max-width: 48px;
+            margin-left: 10px;
         }
         .alfa-sidebar-main-card h2 .alfa-content {
             padding-left: 16px;
@@ -303,7 +309,8 @@
         }
         .alfa-sidebar-main-card .alfa-PT-E-RS-labels {
             display: inline-block;
-            margin-left: 20px;
+            /* margin-left: 20px; */
+            margin-right: 10px;
         }
         .alfa-sidebar-main-card .alfa-PT-E-RS-labels .badge {
             font-size: 12px;
@@ -358,6 +365,15 @@
         .alfa-sidebar-freq-span:hover{
             color: #333;
             text-decoration: none;
+        }
+        .watermark{
+            position: absolute;
+            z-index: -1;
+            opacity: .1;
+            min-width: 750px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
@@ -416,18 +432,18 @@
             <!-- <h2 class="text-uppercase">Mock Tests</h2> --> 
             <div class="card alfa-PT-Examination-card alfa-writing">
                 <div class="card-header alfa-bg-blue-dark p-2">
-                    <h3> 
+                    <h2 class="m-0 text-white"> 
                         <img src="img/logo_rounded.png" class="img-fluid header-logo"> 
                         <!-- <b class="mr-3 ml-3">A </b> -->
                         Alfa PTE | Mock Test | Score Report
-                    </h3>
+                    </h2>
                 </div>
                 <div class="card-body px-lg-4">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="row">
                                 <div class="col-lg-3 pr-lg-0 align-self-center">
-                                    <img src="img/user.png"  class="img-fluid w-75">
+                                    <img src="img/user.png"  class="img-fluid" style="min-width: 110px;">
                                 </div>
                                 <div class="col-lg-7 pl-lg-0">
                                     <p class="mt-2 mb-1"><b>John Doe</b></p>
@@ -480,40 +496,40 @@
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Listening</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Listening <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress listening" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Reading</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Reading <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress reading" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Speaking</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Speaking <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress speaking" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-5 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Writing</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Writing <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress writing" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 42%;" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
@@ -525,60 +541,60 @@
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Grammar</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Grammar <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Oral Fluency</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Oral Fluency <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Pronunciation</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Pronunciation <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Spelling</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Spelling <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Vocabulary</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Vocabulary <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-2 mt-3 no-gutters">
-                            <div class="col-lg-2 align-self-center">
-                                <p class="pl-4 mb-0">Written Discource</p>
+                            <div class="col-lg-3 align-self-center">
+                                <p class="pl-4 mb-0">Written Discource <span class="float-right mr-2"><b>23</b></span></p>
                             </div>
-                            <div class="col-lg-10 align-self-center"> 
+                            <div class="col-lg-9 align-self-center"> 
                                 <div class="progress" style="height: 20px;">
                                     <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
@@ -591,6 +607,7 @@
                         </div>
                     </div>
                 </div>
+                <img src="img/alfa.svg" class="image-fluid watermark" alt="alfa watermark">
             </div> 
             <div class="card mock-report-tabs">
                 <div class="card-header bg-white">
@@ -628,12 +645,13 @@
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/read-aloud-new.svg" alt="read-aloud" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -647,21 +665,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/rs.svg" alt="rs" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -675,21 +694,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/di.svg" alt="di" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -703,9 +723,67 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/rl.svg" alt="rl" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
                                     </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/asq.svg" alt="asq" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -714,12 +792,13 @@
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/we.svg" alt="we" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -733,21 +812,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
+                            </div> 
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/swt.svg" alt="swt" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -761,51 +841,24 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
-                            <div class="card alfa-sidebar-main-card">
-                                <div class="row">
-                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
-                                        <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
-                                                    Canyon Canyon</span> 
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="alfa-PT-E-RS-labels">
-                                            <button class="btn alfa-letter-btn">
-                                                <span>S</span> 100/100
-                                            </button>
-                                            <button class="btn alfa-letter-btn">
-                                                <span>R</span> 100/100
-                                            </button>
-                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
-                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
-                                             
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
-                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
-                                </div>
-                            </div>
+                            </div> 
                         </div>
                         <div class="tab-pane fade" id="reading" role="tabpanel" aria-labelledby="reading-tab">
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/mca-green.svg" alt="mca" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -819,21 +872,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
+                            </div> 
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/mcm.svg" alt="mcm" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -847,21 +901,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
+                            </div> 
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/ro.svg" alt="ro" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -875,23 +930,82 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
+                            </div> 
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/fib.svg" alt="fib" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div> 
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/fib.svg" alt="fib" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div> 
                         </div>
                         <div class="tab-pane fade" id="listening" role="tabpanel" aria-labelledby="listening-tab">
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/sst.svg" alt="sst" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -905,21 +1019,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
+                            </div> 
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/mcm-blue.svg" alt="mcm" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -933,21 +1048,22 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
+                            </div> 
                             <div class="card alfa-sidebar-main-card">
                                 <div class="row">
                                     <div class="col-10 col-md-8 col-lg-5 align-self-center">
                                         <div class="align-self-center">
-                                            <h2><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                            <img src="img/fib-darkblue.svg" alt="fiv" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
                                                     Canyon Canyon</span> 
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5">
+                                    <div class="col-lg-7 text-right align-self-center">
                                         <div class="alfa-PT-E-RS-labels">
                                             <button class="btn alfa-letter-btn">
                                                 <span>S</span> 100/100
@@ -961,18 +1077,163 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
                                         <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
-                                    </div>
+                                    </div> -->
                                 </div>
-                            </div>
+                            </div> 
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/hcs.svg" alt="hcs" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div> 
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/mca-blue.svg" alt="mca" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div> 
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/smw.svg" alt="smw" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div> 
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/hiw.svg" alt="hiw" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div> 
+                            <div class="card alfa-sidebar-main-card">
+                                <div class="row">
+                                    <div class="col-10 col-md-8 col-lg-5 align-self-center">
+                                        <div class="align-self-center">
+                                            <img src="img/wfd.svg" alt="wfd" class="img-fluid practice-icon">
+                                            <h2 class="d-inline-block"><span class="alfa-id">#1000504</span> <span class="alfa-content">The Grand
+                                                    Canyon Canyon</span> 
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 text-right align-self-center">
+                                        <div class="alfa-PT-E-RS-labels">
+                                            <button class="btn alfa-letter-btn">
+                                                <span>S</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-letter-btn">
+                                                <span>R</span> 100/100
+                                            </button>
+                                            <button class="btn alfa-ai-btn" data-toggle="modal" data-target="#aiScoreModal">
+                                                <img src="img/AI-ICON.svg" alt="ai" data-toggle="modal" data-target="#aiScoreModal"> AI SCORE
+                                             
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-2 col-md-4 col-lg-2 align-self-center text-md-right text-lg-right">
+                                        <a href="#" class="alfa-sidebar-freq-span mr-3">Go to Question</a> 
+                                    </div> -->
+                                </div>
+                            </div> 
                         </div>
                       </div>
                 </div>
             </div>
             <p>
                 <i><b><span class="text-danger">Note: </span>Detailed analysis will expires in 6 months.</b></i>
-            </p>
+            </p> 
         </div>
     </div>
     <!--Alfa body End-->
